@@ -1,44 +1,14 @@
-# Burger 2: The Sequel
+# Sequelized Burger
 
 ### Overview
 
-This homework assignment is **optional**.
 
-In this assignment, you're going to Sequelize the `Burger` app you made last unit. We've split this exercise into three different tiers, all with different tasks and expectations. Finish whichever tier will provide you with the most reasonable challenge.
-
-### Before you Begin
-
-1. Create a new folder called `sequelizedBurger`
-2. Copy the contents of your completed assignment from last unit.
-   * Remove the older git connection with `rm -R .git`.
-   * Then connect this folder with a new github repo.
-3. Run `sequelize init` to create the necessary files.
-
-4. **Note**: If for any reason you don't have a finished assignment for last unit, no problem. Message the instructor, who will provide you will a skeleton file to work of for this unit.
-
-### Commits
-
-Having an active and healthy commit history on GitHub is important for your future job search. It is also extremely important for making sure your work is saved in your repository. If something breaks, committing often ensures you are able to go back to a working version of your code.
-
-* Committing often is a signal to employers that you are actively working on your code and learning.
-
-  * We use the mantra “commit early and often.”  This means that when you write code that works, add it and commit it!
-
-  * Numerous commits allow you to see how your app is progressing and give you a point to revert to if anything goes wrong.
-
-* Be clear and descriptive in your commit messaging.
-
-  * When writing a commit message, avoid vague messages like "fixed." Be descriptive so that you and anyone else looking at your repository knows what happened with each commit.
-
-* We would like you to have well over 200 commits by graduation, so commit early and often!
 
 ### Submission on BCS
 
 * **This assignment must be deployed.** Please submit both the deployed Heroku link to your homework AND the link to the Github Repository! See [Sequelize Heroku Deployment](../../03-Supplemental/SequelizeDBDeploy.md)
 
-## Instructions
 
-Put in your best efforts to complete one of the three available challenge tiers. Remember to deploy your assignment to Heroku once complete.
 
 #### Tier 1: Sequelized! (Basic to Moderate)
 
