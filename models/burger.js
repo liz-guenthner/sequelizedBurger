@@ -1,29 +1,12 @@
-// var orm = require("../config/orm");
-
-// var burger = {
-//   all: function(cb) {
-//     orm.all("burgers", function(res) {
-//       cb(res);
-//     });
-//   },
-//   create: function(name, cb) {
-//     orm.create("burgers", ["burger_name", "devoured"], [name, false], cb);
-//   },
-//   update: function(id, cb) {
-//     var condition = "id=" + id;
-//     orm.update("burgers", {
-//       devoured: true
-//     }, condition, cb);
-//   }
-// };
-
-// module.exports = burger;
+// // Sequelize (capital) references the standard library
+var Sequelize = require("sequelize");
+// // sequelize (lowercase) references our connection to the DB.
+var sequelize = require("../config/connection.js");
 
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
     burger_name: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     },
     devoured: {
       type: DataTypes.INTEGER,
@@ -32,3 +15,28 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Burger;
 }
+
+
+// Creates a "Character" model that matches up with DB
+// var Burger = sequelize.define("burger", {
+//   // the routeName gets saved as a string
+//   burger_name: Sequelize.STRING,
+//   // the name of the character (a string)
+//   name: Sequelize.STRING,
+//   // the character's role (a string)
+//   role: Sequelize.STRING,
+//   // the character's age (a string)
+//   age: Sequelize.INTEGER,
+  
+//   // and the character's force points (an int)
+//   forcePoints: Sequelize.INTEGER
+// }, {
+//   // disable the modification of tablenames; By default, sequelize will automatically
+//   // transform all passed model names (first parameter of define) into plural.
+//   // if you don't want that, set the following
+//   freezeTableName: true
+// });
+
+
+// Burger.sync();
+// module.exports = Burger;
