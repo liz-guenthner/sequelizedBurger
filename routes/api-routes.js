@@ -30,7 +30,7 @@ module.exports = function(app) {
   });
   
   // DELETE route for deleting burgers
-  app.delete("/burgers/:id", function(req, res) {
+  app.delete("/burgers/delete/:id", function(req, res) {
     // Add sequelize code to delete a post where the id is equal to req.params.id, 
     // then return the result to the user using res.json
     db.Burger.destroy({
