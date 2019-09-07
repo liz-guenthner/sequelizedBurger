@@ -1,12 +1,12 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
+    "username": "homestead",
+    "password": "secret",
     "database": "burgers_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false,
-    "port": 8889
+    "port": 33060
   },
   "test": {
     "username": "root",
