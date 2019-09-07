@@ -13,8 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-    "mysql2": "^1.6.4",
     "express-handlebars": "^3.0.0",
+    "mysql2": "^1.6.4",
+<<<<<<< HEAD
+    "express-handlebars": "^3.0.0",
+=======
+    "nodemon": "^1.19.2",
+>>>>>>> 5c89e7b1067ac6b734180e6eb7875686adf84ccf
     "sequelize": "^4.41.2"
   },
   "devDependencies": {

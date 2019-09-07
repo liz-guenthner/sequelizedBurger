@@ -11,6 +11,9 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+// Static directory
+app.use(express.static("public"));
+
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -18,6 +21,7 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+<<<<<<< HEAD
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
@@ -32,6 +36,24 @@ app.use(routes);
 // Routes
 // =============================================================
 // require("./routes/api-routes.js")(app);
+=======
+
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs(
+    {
+      defaultLayout: "main"
+    }
+));
+
+app.set("view engine", "handlebars");
+
+// Routes
+// =============================================================
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+>>>>>>> 5c89e7b1067ac6b734180e6eb7875686adf84ccf
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
