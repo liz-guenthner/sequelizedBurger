@@ -1,6 +1,7 @@
 // var express = require("express");
 // var router = express.Router();
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
   // app.get("/", function(req, res) {
@@ -26,7 +27,10 @@ module.exports = function(app) {
     db.Burger.create({
       burger_name: req.body.burger_name
       // devoured: req.body.devoured
-    }).then(result => {res.json(result)});
+    }).then(result => {
+      console.log(res.json(result));
+      return path.join(__dirname, '/');
+      });
   });
   
   // DELETE route for deleting burgers
