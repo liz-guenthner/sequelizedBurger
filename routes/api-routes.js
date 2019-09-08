@@ -22,10 +22,10 @@ module.exports = function(app) {
   });
 
   app.post("/burgers/create", function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.Burger.create({
-      burger_name: req.body.burger_name,
-      devoured: req.body.devoured
+      burger_name: req.body.burger_name
+      // devoured: req.body.devoured
     }).then(result => {res.json(result)});
   });
   
