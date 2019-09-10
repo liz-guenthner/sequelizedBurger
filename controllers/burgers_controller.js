@@ -1,52 +1,42 @@
-// var express = require("express");
-// var router = express.Router();
-var db = require("../models");
+var express = require("express");
 
-module.exports = function(app) {
-  // app.get("/", function(req, res) {
-  //   res.redirect("/burgers", {});
-  // });
+var router = express.Router();
+var burger = require("../models/burger");
 
-  app.get("/burgers", function(req, res) {
-    db.Burger.findAll({})
-    .then(result => {res.json(result)});
-  });
+// get route -> index
+router.get("/", function(req, res) {
+  res.redirect("/burgers");
+});
 
-  // Get route for retrieving a specific burger
-  app.get("/burgers/:id", function(req, res) {
-    // Add sequelize code to find a single post where the id is equal to req.params.id,
-    // return the result to the user with res.json
-    db.Burger.findOne({
-      where: { id: req.params.id }
-    }).then(result => {res.json(result)});
+router.get("/burgers", function(req, res) {
+  // express callback response by calling burger.selectAllBurger
+  burger.all(function(data) {
+    // Wrapping the array of returned burgers in a object so it can be referenced inside our handlebars
+    var hbsObject = { burgers: data };
+    res.render("index", hbsObject);
   });
+});
 
-  app.post("/burgers/create", function(req, res) {
-    console.log(req.body);
-    db.Burger.create({
-      burger_name: req.body.burger_name,
-      devoured: req.body.devoured
-    }).then(result => {res.json(result)});
+// post route -> back to index
+router.post("/burgers/create", function(req, res) {
+  // takes the request object using it as input for burger.addBurger
+  burger.create(req.body.burger_name, function(result) {
+    // wrapper for orm.js that using MySQL insert callback will return a log to console,
+    // render back to index with handle
+    console.log(result);
+    res.redirect("/");
   });
-  
-  // DELETE route for deleting burgers
-  app.delete("/burgers/:id", function(req, res) {
-    // Add sequelize code to delete a post where the id is equal to req.params.id, 
-    // then return the result to the user using res.json
-    db.Burger.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(result => {res.json(result)});
-  });
+});
 
-  app.put("/burgers/update/:id", function(req, res) {
-    db.Burger.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-      }
-      }).then(result => {res.json(result)});
+// put route -> back to index
+router.put("/burgers/update/:id", function(req, res) {
+  burger.update(req.params.id, function(result) {
+    // wrapper for orm.js that using MySQL update callback will return a log to console,
+    // render back to index with handle
+    console.log(result);
+    // Send back response and let page reload from .then in Ajax
+    res.json("/");
   });
-};
+});
+
+module.exports = router;
