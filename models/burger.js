@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    var Burger = sequelize.define("Burger", {
+    var Burger = sequelize.define("burger", {
       // Giving the Burger model a name of type STRING
       burger_name: {
         type: DataTypes.STRING,
