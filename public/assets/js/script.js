@@ -5,8 +5,7 @@ $(".devour-form").submit(function(event) {
         url: 'burgers/update/' + burgerId,
         type: 'put'
     });
-    // return something here to return data?
-    // doesn't take effect until after I refresh page
+    location.reload();
 });
 
 
