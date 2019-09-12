@@ -1,54 +1,37 @@
 # Sequelized Burger
 
 ### Overview
+1. This app uses sequelize to control data going in and out of mysql DB.
+2. The app is deployed to Heroku.
+3. Link to Heroku:
+https://morning-ocean-46389.herokuapp.com/
+https://git.heroku.com/morning-ocean-46389.git
+https://morning-ocean-46389.herokuapp.com/burgers
+
+4. Link to repo:
+https://github.com/liz-guenthner/sequelizedBurger
+
+5. Link to portfolio:
+https://liz-guenthner.github.io/lizGuenthnerResume/
 
 
+### Instructions
+1. Type in a burger name and click "Submit" to see it appear in table on left of screen.
+2. Click "Devour It! CTA to eat the burger and transer it to table on right of screen.
 
 
-* **This assignment must be deployed.** Please submit both the deployed Heroku link to your homework AND the link to the Github Repository! See [Sequelize Heroku Deployment](../../03-Supplemental/SequelizeDBDeploy.md)
+### Heroku links and instructions
+1. https://devcenter.heroku.com/articles/heroku-cli
+2. ```brew tap heroku/brew && brew install heroku```
+3. ```heroku --version```
+4. ```heroku login```
+5. click any key
+6. login to heroku page in browser (email, J-123!)
+7. cd to project folder
+8. ```heroku create```
+9. ```heroku local web``` run app locally
+10. ```git push heroku master``` push to heroku master
+11. go to https://dashboard.heroku.com/apps
+12. click on project name
 
-
-
-#### Tier 1: Sequelized! (Basic to Moderate)
-
-* Remove all references to your vanilla MySQL queries and replace them with Sequelize queries.
-
-* That means:
-
-  * Replacing your MySQL `Burger` model with a Sequelized equivalent.
-
-    * Don't forget to edit the model and initial migration file to make the burger's devoured field carry a default value of false -- otherwise you might encounter bugs.
-      * There's no option to include that default in the command line, so you'll need to open up your editor to make this change.
-    * Don't forget to sync the models!
-
-    * Edit your new `config.json` file to include your database configurations. Place your JawsDB details in the `production` property of your json file; the details of your local database go in the `developer` property.
-
-    * Remove your old ORM file, as well as any references to it in `burgers_controller.js`. Replace those references with Sequelize's ORM methods.
-
-* When you finish, your site should function just like your last one:
-    ![1-Sequelized](Images/1-Sequelized.jpg)
-
-#### Tier 2: Customer Associations (Challenge)
-
-* Add in a Customer association to the project. This will involve creating at least one new Customer model and connecting it with your Burger model.
-
-* What kind of association you would like to use is up to you. Does a Customer have one Burger? Many Burgers?
-
-* For example, you could make a site that logs the name of which Customer ate which Burger, where each Customer only gets one Burger. If you can't think of another type of association, try this one!
-
-    ![3-Associated](Images/3-Associated.jpg)
-
-* If you do go select this tier, you must edit the handlebars files and CSS stylesheets to implement some sort of additional feature to the site. We don't want you to just connect two models and submit your project. Make your site do something relevant to this association.
-
-#### Bonus! (Challenge)
-
-* Add validations to your models where:
-
-  * A burger's name cannot be null
-  * A burger's devoured status is false by default
-  * A Customer's name cannot be null
-
-* Order the Burgers you send back to the user in alphabetical order using the Sequelize "order" option.
-
-
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details.
+https://devcenter.heroku.com/articles/account-verification) for more details.
