@@ -24,14 +24,23 @@ https://liz-guenthner.github.io/lizGuenthnerResume/
 1. https://devcenter.heroku.com/articles/heroku-cli
 2. ```brew tap heroku/brew && brew install heroku```
 3. ```heroku --version```
-4. ```heroku login```
-5. click any key
-6. login to heroku page in browser (email, J-123!)
-7. cd to project folder
-8. ```heroku create```
-9. ```heroku local web``` run app locally
-10. ```git push heroku master``` push to heroku master
-11. go to https://dashboard.heroku.com/apps
-12. click on project name
+4. load in JawsDB (see below)
+5. ```heroku login```
+6. click any key
+7. login to heroku page in browser (email, J-123!)
+8. cd to project folder
+9. ```heroku create```
+10. ```heroku local web``` run app locally
+11. ```git push heroku master``` push to heroku master
+
+### Jaws DB instructions
+1. ```heroku addons:create jawsdb```
+2. ```heroku config:get JAWSDB_URL```
+3. ```heroku config -s | grep JAWSDB_URL >> .env```
+4. ```echo .env >> .gitignore```
+
+### Open App
+1. go to https://dashboard.heroku.com/apps
+2. click on "Open app"
 
 https://devcenter.heroku.com/articles/account-verification) for more details.
