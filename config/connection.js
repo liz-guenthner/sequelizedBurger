@@ -1,6 +1,6 @@
 var mysql = require("mysql");
-require('dotenv').config();
-
+var dotEnv = require('dotenv');
+dotEnv.config();
 var connection;
 
 if (process.env.JAWSDB_URL) {
@@ -12,8 +12,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     user: "root",
     password: "root",
-    database: "burgers_db",
-    port: 8889
+    database: "burgers_db"
   })
 };
 
