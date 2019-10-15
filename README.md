@@ -4,8 +4,11 @@
 1. This app uses sequelize to control data going in and out of mysql DB.
 2. The app is deployed to Heroku.
 3. Link to Heroku:
+
 https://morning-ocean-46389.herokuapp.com/
+
 https://git.heroku.com/morning-ocean-46389.git
+
 https://morning-ocean-46389.herokuapp.com/burgers
 
 4. Link to repo:
