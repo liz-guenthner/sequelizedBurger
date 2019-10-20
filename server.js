@@ -1,26 +1,27 @@
 var express = require("express");
-
+var exphbs = require("express-handlebars");
 var app = express();
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+var routes = require("./controllers/burgers_controller");
+// listen on port 3000
+var PORT = process.env.PORT || 3000;
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var exphbs = require("express-handlebars");
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 app.engine("handlebars", exphbs({
   defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller");
-
 app.use(routes);
 
-// listen on port 3000
-var PORT = process.env.PORT || 3000;
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
